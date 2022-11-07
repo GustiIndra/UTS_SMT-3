@@ -1,0 +1,31 @@
+from tkinter import *
+import time
+
+class Jam:
+    def __init__(self, parent):
+        self.parent = parent
+        self.komponen()
+        self.perbaui()
+
+    def komponen(self):
+        self.teksJam = StringVar()
+        self.teks = Label(text="Gusti Indra Permana 20210801399 ", bg ="white")
+        self.teks.pack()
+
+        waktu = Frame(self.parent, bd=10)
+        waktu.pack()
+
+        self.jam = Label(waktu, textvariable=self.teksJam,font=('Courior New', 35, 'bold'),bg = "light blue",fg="blue")
+        self.jam.pack()
+
+    def perbaui(self):
+        datJam = time.strftime("%H:%M:%S", time.localtime())
+
+        self.teksJam.set(datJam)
+        self.timer = self.parent.after(1000, self.perbaui)
+
+if __name__ == '__main__':
+    root = Tk()
+    root.title("TUGAS SESI 6")
+    app = Jam(root)
+    root.mainloop()
