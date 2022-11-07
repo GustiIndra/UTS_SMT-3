@@ -1,0 +1,8 @@
+#Jawaban No.2 UTS PBO
+
+print("===========")
+print("Program Quiz")
+print("===========")
+
+name = input ('masukan nama :')
+Nim = input ('masukan NIM :')
